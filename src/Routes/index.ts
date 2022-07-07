@@ -1,16 +1,15 @@
 import { Router } from "express";
-import { home, dogs, cats, fishes } from "../Controllers/pageController";
-import { search } from "../Controllers/searchController";
 
+import * as PageController from "../Controllers/pageController";
+import * as SearchController from "../Controllers/searchController";
 
 const router = Router();
 
-router.get("/", home);
-router.get("/dogs", dogs);
-router.get("/cats", cats);
-router.get("/fishes", fishes);
-router.get("/search", search);
+router.get("/", PageController.home);
+router.get("/dogs", PageController.dogs);
+router.get("/cats", PageController.cats);
+router.get("/fishes", PageController.fishes);
 
-
+router.get("/search", SearchController.search);
 
 export default router;
