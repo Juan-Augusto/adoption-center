@@ -136,5 +136,8 @@ export const Pet = {
     },
     getAllByType: (type: PetType): Pet[] => {
         return data.filter(item => item.type === type)
+    },
+    getByName: (name: string): Pet[] => {
+        return data.filter(item => item.name.toLowerCase().indexOf(name.toLowerCase()) > -1);
     }
 };
