@@ -1,5 +1,7 @@
+type PetType = 'dog' | 'cat' | 'fish';
+
 type Pet = {
-    type: 'dog' | 'cat' | 'fish',
+    type: PetType,
     name: string,
     image: string,
     color: string,
@@ -131,5 +133,8 @@ const data: Pet[] = [
 export const Pet = {
     getAll: (): Pet[] => {
         return data;
+    },
+    getAllByType: (type: PetType): Pet[] => {
+        return data.filter(item => item.type === type)
     }
 };
