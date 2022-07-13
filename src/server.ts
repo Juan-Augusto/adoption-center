@@ -18,7 +18,7 @@ server.use(express.urlencoded({extended: true})); //habilita o express para rece
 
 server.use('/', mainRoutes);
 server.use((req: Request, res: Response) => {
-    res.status(404).send('Página não encontrada');
+    res.render('pages/404');
 })
 
 server.listen(process.env.PORT);
